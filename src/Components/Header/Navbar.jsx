@@ -6,7 +6,7 @@ import logo from '../../Assests/Image/logo.jpg';
 
 const menuItems = [
   { title: 'Home', path: '/', icon: faHome },
-  
+
   {
     title: 'Expertise', path: '/expertise', icon: faCogs, subItems: [
       { title: 'Item 1', path: '/expertise/item1' },
@@ -60,7 +60,8 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="hidden lg:block">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none">Get in Touch</button>
+          {/* <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none">Get in Touch</button> */}
+          <button className="px-6 py-2 bg-blue-500 rounded-full text-white">Get free website</button>
         </div>
         <div className="lg:hidden">
           <button className="text-white focus:outline-none mobile-menu-button" onClick={toggleMobileMenu}>
