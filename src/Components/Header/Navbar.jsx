@@ -6,6 +6,7 @@ import logo from '../../Assests/Image/logo.jpg';
 
 const menuItems = [
   { title: 'Home', path: '/', icon: faHome },
+  
   {
     title: 'Expertise', path: '/expertise', icon: faCogs, subItems: [
       { title: 'Item 1', path: '/expertise/item1' },
