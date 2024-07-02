@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className=''>
       <Navbar/>
-      {/* <Hero className="mt-84"/> */}
+      <Hero className="mt-84"/>
     </div>
   )
 }
