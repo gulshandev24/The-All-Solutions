@@ -17,6 +17,9 @@
 // };
 
 // export default App;
+
+
+
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Landingpage/Home';
@@ -30,7 +33,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 10000); // Adjust the timeout duration as needed
+    }, 3000); // Adjust the timeout duration as needed
   }, []);
 
   return (

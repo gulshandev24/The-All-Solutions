@@ -65,7 +65,7 @@ const Navbar = () => {
       >
         <div className="flex items-center">
           <Link to="/">
-            <img src={logo} alt="PairBytes Logo" className="h-16 mr-2" />
+            <img src={logo} alt="TheAllSolutions Logo" className="h-16 mr-2" />
           </Link>
         </div>
         <ul className="hidden lg:flex space-x-8">

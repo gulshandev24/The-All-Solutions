@@ -1,0 +1,23 @@
+/* Loader.css */
+
+/* For smaller screens */
+@media (max-width: 640px) {
+    .animated-letter {
+      font-size: 0.001em; /* Smaller text for small devices */
+    }
+  }
+  
+  /* For medium screens */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .animated-letter {
+      font-size: 0.75em; /* Medium text for medium devices */
+    }
+  }
+  
+  /* For larger screens */
+  @media (min-width: 1025px) {
+    .animated-letter {
+      font-size: 1em; /* Default text size */
+    }
+  }
+  
