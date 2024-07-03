@@ -4,7 +4,7 @@ import Hero from '../Herosections/Hero'
 function Home() {
   return (
     <div className=''>
-      <Navbar/>
+      {/* <Navbar/> */}
       <Hero className="mt-84"/>
     </div>
   )
