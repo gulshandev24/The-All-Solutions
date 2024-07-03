@@ -8,6 +8,7 @@ import 'tailwindcss/tailwind.css';
 
 const Hero = () => {
   return (
+    
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-black text-white p-4 overflow-hidden">
       {/* <Particles
         id="tsparticles"
@@ -142,6 +143,62 @@ export default Hero;
 
 
 
+// import React, { Suspense } from 'react';
+// import { motion } from 'framer-motion';
+// import { Canvas } from '@react-three/fiber';
+// import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
+// import 'tailwindcss/tailwind.css';
+
+// const Hero = () => {
+//   return (
+//     <div className="relative flex flex-col items-center justify-center min-h-screen bg-black text-white p-4 overflow-hidden">
+//       <motion.h1
+//         initial={{ opacity: 0, y: -50 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 1 }}
+//         className="text-5xl md:text-7xl font-bold text-center relative z-10"
+//       >
+//         Take your business online & thrive!
+//       </motion.h1>
+//       <motion.p
+//         initial={{ opacity: 0, y: 50 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 1, delay: 0.5 }}
+//         className="mt-4 text-lg md:text-2xl text-center relative z-10"
+//       >
+//         Streamlined Rightway to boost productivity and elevate your business.
+//       </motion.p>
+//       <motion.div
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 1 }}
+//         transition={{ duration: 1, delay: 1 }}
+//         className="mt-8 flex space-x-4 relative z-10"
+//       >
+//         <button className="px-6 py-2 bg-blue-500 rounded-full text-white">Get free website</button>
+//         <button className="px-6 py-2 bg-transparent border-2 border-white rounded-full text-white">See our plans</button>
+//       </motion.div>
+//       <div className="absolute top-0 left-0 w-full h-full z-0">
+//         <Canvas className="z-0">
+//           <ambientLight intensity={0.5} />
+//           <pointLight position={[10, 10, 10]} />
+//           <OrbitControls enableZoom={false} />
+//           <Suspense fallback={null}>
+//             <Sphere visible args={[1, 100, 200]} scale={2.5}>
+//               <MeshDistortMaterial
+//                 color="#8352FD"
+//                 attach="material"
+//                 distort={0.5}
+//                 speed={2}
+//               />
+//             </Sphere>
+//           </Suspense>
+//         </Canvas>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Hero;
 
 
 

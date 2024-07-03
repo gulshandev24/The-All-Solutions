@@ -18,3 +18,24 @@
 
 
    /* Hide desktop menu for max-width: 1047px */
+/* Add to your CSS file or within a <style> tag in your component */
+.group:hover .group-hover\:block {
+  display: block;
+}
+
+.group:hover .group-hover\:flex {
+  display: flex;
+}
+
+.group-hover\:hidden {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .lg\\:hidden {
+    display: none;
+  }
+  .lg\\:block {
+    display: block;
+  }
+}
