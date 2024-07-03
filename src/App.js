@@ -1,25 +1,3 @@
-// import React from 'react';
-// import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import Home from './Components/Landingpage/Home';
-// import Loader from './Components/Utils/Loader'
-
-// const App = () => {
-//   return (
-//     <>
-//           <BrowserRouter>
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         {/* Add more routes here */}
-//       </Routes>
-//     </BrowserRouter>
-//     </>
-//   );
-// };
-
-// export default App;
-
-
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Landingpage/Home';
@@ -33,7 +11,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000); // Adjust the timeout duration as needed
+    }, 10000); // Adjust the timeout duration as needed
   }, []);
 
   return (

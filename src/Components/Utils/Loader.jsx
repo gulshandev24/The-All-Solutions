@@ -18,12 +18,12 @@ const getRandomEdgePosition = () => {
 };
 
 // Animated letter component with text color and movement effects
-const AnimatedLetter = ({ letter, position, targetPosition, delay, duration }) => {
+const AnimatedLetter = ({ letter, position, targetPosition, delay, duration, onComplete, allComplete }) => {
   const ref = useRef();
   const [startTime, setStartTime] = useState(null);
 
   // Calculate the font size based on the window width
-  const [fontSize, setFontSize] = useState(window.innerWidth <= 640 ? 0.5 : 1);
+  const [fontSize, setFontSize] = useState(window.innerWidth <= 640 ? 0.3 : 1);
   
   useEffect(() => {
     const handleResize = () => {
@@ -46,9 +46,38 @@ const AnimatedLetter = ({ letter, position, targetPosition, delay, duration }) =
         t
       );
 
-      // Add a color animation effect
-      const colorProgress = Math.min(t * 2, 1);
-      ref.current.color = new THREE.Color(`hsl(${colorProgress * 360}, 100%, 50%)`);
+      // Add a gradient color animation effect
+      if (allComplete) {
+        ref.current.color = new THREE.Color("white");
+      } else {
+        const colorProgress = Math.min(t * 2, 1);
+        // Define gradient colors
+        const gradientColors = [
+          { hue: 180, saturation: 100, lightness: 50 }, // Cyan
+          { hue: 240, saturation: 100, lightness: 50 }, // Blue
+          { hue: 300, saturation: 100, lightness: 50 }, // Magenta
+        ];
+
+        const gradientCount = gradientColors.length;
+        const gradientIndex = Math.floor(colorProgress * (gradientCount - 1));
+        const nextGradientIndex = Math.min(gradientIndex + 1, gradientCount - 1);
+        const gradientFraction = (colorProgress * (gradientCount - 1)) % 1;
+
+        const currentColor = gradientColors[gradientIndex];
+        const nextColor = gradientColors[nextGradientIndex];
+
+        if (currentColor && nextColor) {
+          const hue = currentColor.hue + (nextColor.hue - currentColor.hue) * gradientFraction;
+          const saturation = currentColor.saturation + (nextColor.saturation - currentColor.saturation) * gradientFraction;
+          const lightness = currentColor.lightness + (nextColor.lightness - currentColor.lightness) * gradientFraction;
+
+          ref.current.color = new THREE.Color(`hsl(${hue}, ${saturation}%, ${lightness}%)`);
+        }
+      }
+
+      if (t === 1 && onComplete) {
+        onComplete();
+      }
     }
   });
 
@@ -74,6 +103,7 @@ const Loader = () => {
   const letters = "TheAllSolutions".split("");
   const initialPositions = letters.map(getRandomEdgePosition);
   const targetPositions = letters.map((_, i) => [-4 + i * 0.6, 0, 0]);
+  const [allComplete, setAllComplete] = useState(false);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-gray-800 via-black to-gray-900 z-50 overflow-hidden">
@@ -173,7 +203,13 @@ const Loader = () => {
             position={initialPositions[i]}
             targetPosition={targetPositions[i]}
             delay={i * 0.01} // Delay each letter's animation
-            duration={2} // Duration of the animation
+            duration={3.5} // Duration of the animation
+            onComplete={() => {
+              if (i === letters.length - 1) {
+                setAllComplete(true);
+              }
+            }}
+            allComplete={allComplete}
           />
         ))}
       </Canvas>
@@ -182,14 +218,6 @@ const Loader = () => {
 };
 
 export default Loader;
-
-
-
-
-
-
-
-
 
 
 
