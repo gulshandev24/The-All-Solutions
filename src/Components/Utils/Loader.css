@@ -1,23 +1,31 @@
-/* Loader.css */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); 
+  }
+}
 
-/* For smaller screens */
+.animated-letter {
+  font-family: 'Roboto', sans-serif; 
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5); 
+}
+
+
+.animated-letter.bounce {
+  animation: bounce 0.6s ease-in-out infinite; 
+}
+
+
 @media (max-width: 640px) {
-    .animated-letter {
-      font-size: 0.001em; /* Smaller text for small devices */
-    }
+  .animated-letter {
+    font-size: 0.3em;
   }
-  
-  /* For medium screens */
-  @media (min-width: 641px) and (max-width: 1024px) {
-    .animated-letter {
-      font-size: 0.75em; /* Medium text for medium devices */
-    }
+}
+
+@media (min-width: 641px) {
+  .animated-letter {
+    font-size: 1em;
   }
-  
-  /* For larger screens */
-  @media (min-width: 1025px) {
-    .animated-letter {
-      font-size: 1em; /* Default text size */
-    }
-  }
-  
+}
