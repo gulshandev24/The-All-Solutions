@@ -1,0 +1,27 @@
+/* Custom cursor effect */
+.image-container {
+    cursor: url('/public/Images/cursor.png'), auto;
+  }
+  
+  .image-container:hover .pendulum {
+    animation: pendulum 2s infinite;
+  }
+  
+  /* Pendulum keyframe animation */
+  @keyframes pendulum {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+  }
+  
+  /* Tailwind CSS custom transition */
+  .image-container {
+    transform: translateZ(0);
+    transition: transform 0.3s ease-out;
+  }
+  
+  .image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  }
+  

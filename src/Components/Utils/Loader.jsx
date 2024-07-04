@@ -52,8 +52,6 @@ const AnimatedLetter = ({ letter, position, targetPosition, delay, duration, onC
 
      
       ref.current.setRotationFromEuler(new THREE.Euler(0, 0, 0));
-
-   
       if (t === 1 && !hasBounced) {
         setHasBounced(true); 
       }
