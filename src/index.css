@@ -1,24 +1,8 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Add this to your CSS or Tailwind configuration */
-/* .mobile-menu-item:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .mobile-menu-button:hover {
-    background-color: #e2e8f0;
-  }
-  
-  .mobile-menu-button:active {
-    background-color: #d1d5db;
-  }
-   */
 
-
-   /* Hide desktop menu for max-width: 1047px */
-/* Add to your CSS file or within a <style> tag in your component */
 .group:hover .group-hover\:block {
   display: block;
 }
@@ -29,5 +13,20 @@
 
 .group-hover\:hidden {
   display: none;
+} */
+
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles if any */
+
+/* Ensure the background image is responsive */
+.bg-cover {
+  background-size: cover;
 }
 
+.bg-center {
+  background-position: center;
+}
